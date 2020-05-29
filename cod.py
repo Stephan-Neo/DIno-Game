@@ -481,36 +481,34 @@ def game_over():
             return True
         pygame.display.update()
 
-
 def find_music():
     if choise_music == 0:
         music_print = 'Heart shaped box. Nirvana'
         return music_print
 
-    if choise_music == 1:
+    elif choise_music == 1:
         music_print = 'Smells like teen spirit. Nirvana'
         return music_print
 
-    if choise_music == 2:
+    elif choise_music == 2:
         music_print = 'Comatose. Skillet'
         return music_print
 
-    if choise_music == 3:
+    elif choise_music == 3:
         music_print = 'Awake and alive. Skillet'
         return music_print
 
-    if choise_music == 4:
+    elif choise_music == 4:
         music_print = 'Believer. Imagine Dragons'
         return music_print
 
-    if choise_music == 5:
+    elif choise_music == 5:
         music_print = 'Zeig dich. Rammstein'
         return music_print
 
-    if choise_music == 6:
+    else:
         music_print = 'Stressed out. Twenty one pilots             '
         return music_print
-
 show_menu()
 pygame.quit()
 quit()
