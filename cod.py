@@ -1,52 +1,48 @@
 import pygame, random
-
-
 pygame.init()
 display_widht = 800
 display_height = 600
 display = pygame.display.set_mode((display_widht, display_height))
 pygame.display.set_caption("Dino Game")
 
-fon_musics = ["E:\Dinozavr_game\data\sounnd\sackground0.mp3","E:\Dinozavr_game\data\sounnd\sackground1.mp3","E:\Dinozavr_game\data\sounnd\sackground2.mp3",
-              "E:\Dinozavr_game\data\sounnd\sackground3.mp3", "E:\Dinozavr_game\data\sounnd\sackground4.mp3", "E:\Dinozavr_game\data\sounnd\sackground5.mp3",
-              "E:\Dinozavr_game\data\sounnd\sackground6.mp3"]
+fon_musics = ["data\sounnd\sackground0.mp3","data\sounnd\sackground1.mp3","data\sounnd\sackground2.mp3",
+              "data\sounnd\sackground3.mp3", "data\sounnd\sackground4.mp3", "data\sounnd\sackground5.mp3",
+              "data\sounnd\sackground6.mp3"]
 choise_music = random.randrange(0, 7)
 pygame.mixer.music.set_volume(0.5)
 sound = fon_musics[choise_music]
 
-
-lose_sound = pygame.mixer.Sound('E:\Dinozavr_game\data\sounnd\wtf.wav')
-start_sound = pygame.mixer.Sound('E:\Dinozavr_game\data\sounnd\ok.wav')
-
+lose_sound = pygame.mixer.Sound('data\sounnd\wtf.wav')
+start_sound = pygame.mixer.Sound('data\sounnd\ok.wav')
 
 
-icon = pygame.image.load('E:\Dinozavr_game\data\picture\caption.ico')
+icon = pygame.image.load('data\picture\caption.ico')
 pygame.display.set_icon(icon)
 
-cactus_img = [pygame.image.load("E:\Dinozavr_game\data\picture\Cactus0.png"), pygame.image.load("E:\Dinozavr_game\data\picture\Cactus1.png"),
-              pygame.image.load("E:\Dinozavr_game\data\picture\Cactus2.png")]
+cactus_img = [pygame.image.load("data\picture\Cactus0.png"), pygame.image.load("data\picture\Cactus1.png"),
+              pygame.image.load("data\picture\Cactus2.png")]
 cactus_options = [69, 449, 37, 410, 40, 420]
 
 
-cloud_img = [pygame.image.load('E:\Dinozavr_game\data\picture\Cloud0.png'), pygame.image.load('E:\Dinozavr_game\data\picture\Cloud1.png')]
-dino_skin2 = [pygame.image.load("E:\Dinozavr_game\data\dino\Dino0.png"), pygame.image.load("E:\Dinozavr_game\data\dino\Dino1.png"), pygame.image.load("E:\Dinozavr_game\data\dino\Dino2.png"),
-            pygame.image.load("E:\Dinozavr_game\data\dino\Dino3.png"), pygame.image.load("E:\Dinozavr_game\data\dino\Dino4.png")]
-dino_skin_3 = [pygame.image.load("E:\Dinozavr_game\data\dino\Dino2_0.png"), pygame.image.load("E:\Dinozavr_game\data\dino\Dino2_1.png"), pygame.image.load("E:\Dinozavr_game\data\dino\Dino2_2.png"),
-               pygame.image.load("E:\Dinozavr_game\data\dino\Dino2_3.png"), pygame.image.load("E:\Dinozavr_game\data\dino\Dino2_4.png")]
-dino_skin1 = [pygame.image.load("E:\Dinozavr_game\data\dino\Dino3_0.png"), pygame.image.load("E:\Dinozavr_game\data\dino\Dino3_1.png"),
-              pygame.image.load("E:\Dinozavr_game\data\dino\Dino3_2.png"), pygame.image.load("E:\Dinozavr_game\data\dino\Dino3_3.png"),
-              pygame.image.load("E:\Dinozavr_game\data\dino\Dino3_4.png")]
+cloud_img = [pygame.image.load('data\picture\Cloud0.png'), pygame.image.load('data\picture\Cloud1.png')]
+dino_skin2 = [pygame.image.load("data\dino\Dino0.png"), pygame.image.load("data\dino\Dino1.png"), pygame.image.load("data\dino\Dino2.png"),
+            pygame.image.load("data\dino\Dino3.png"), pygame.image.load("data\dino\Dino4.png")]
+dino_skin_3 = [pygame.image.load("data\dino\Dino2_0.png"), pygame.image.load("data\dino\Dino2_1.png"), pygame.image.load("data\dino\Dino2_2.png"),
+               pygame.image.load("data\dino\Dino2_3.png"), pygame.image.load("data\dino\Dino2_4.png")]
+dino_skin1 = [pygame.image.load("data\dino\Dino3_0.png"), pygame.image.load("data\dino\Dino3_1.png"),
+              pygame.image.load("data\dino\Dino3_2.png"), pygame.image.load("data\dino\Dino3_3.png"),
+              pygame.image.load("data\dino\Dino3_4.png")]
 dino_draw = ()
 
 dino_draw = dino_skin2
 
-dino_when_jump1 = pygame.image.load('E:\Dinozavr_game\data\dino\Dino_jump3.png')
-dino_when_jump2 = pygame.image.load('E:\Dinozavr_game\data\dino\Dino_jump.png')
-dino_when_jump3 = pygame.image.load('E:\Dinozavr_game\data\dino\Dino_jump2.png')
+dino_when_jump1 = pygame.image.load('data\dino\Dino_jump3.png')
+dino_when_jump2 = pygame.image.load('data\dino\Dino_jump.png')
+dino_when_jump3 = pygame.image.load('data\dino\Dino_jump2.png')
 
-dino_colision1 = pygame.image.load('E:\Dinozavr_game\data\dino\Dino_colision1.png')
-dino_colision2 = pygame.image.load('E:\Dinozavr_game\data\dino\Dino_colision2.png')
-dino_colision3 = pygame.image.load('E:\Dinozavr_game\data\dino\Dino_colision3.png')
+dino_colision1 = pygame.image.load('data\dino\Dino_colision1.png')
+dino_colision2 = pygame.image.load('data\dino\Dino_colision2.png')
+dino_colision3 = pygame.image.load('data\dino\Dino_colision3.png')
 
 dino_jump = ()
 dino_jump = dino_when_jump2
@@ -55,13 +51,13 @@ dino_colision = ()
 dino_colision = dino_colision2
 
 
-palma = pygame.image.load('E:\Dinozavr_game\data\picture\palma.png')
-frog_img = pygame.image.load('E:\Dinozavr_game\data\picture\srog.png')
-tick = pygame.image.load('E:\Dinozavr_game\data\picture\sick.png')
+palma = pygame.image.load('data\picture\palma.png')
+frog_img = pygame.image.load('data\picture\srog.png')
+tick = pygame.image.load('data\picture\sick.png')
 
-land2 = pygame.image.load('E:\Dinozavr_game\data\picture\Land.jpg')
-land3 = pygame.image.load('E:\Dinozavr_game\data\picture\Land2.jpg')
-land1 = pygame.image.load('E:\Dinozavr_game\data\picture\Land3.jpg')
+land2 = pygame.image.load('data\picture\Land.jpg')
+land3 = pygame.image.load('data\picture\Land2.jpg')
+land1 = pygame.image.load('data\picture\Land3.jpg')
 land = land2
 
 img_counter = 0
@@ -121,13 +117,8 @@ class Button:
                         quit()
                     else:
                         action()
-
-
-
         else:
             pygame.draw.rect(display, self.inactive_clr, (x , y , self.widht_color, self.height_color))
-
-
         print_text(message = message, x = self.x_init + 10, y = self.y_init + 10, font_size = font_size)
 
 
@@ -158,10 +149,11 @@ class Tick:
                 land = self.bc
                 if action2 is not None:
                     action2()
-
             else:
                 display.blit(tick, (self.x, self.y))
         pygame.display.update()
+
+
 usr_widht = 60
 usr_height = 100
 usr_x = display_widht // 3
@@ -182,8 +174,8 @@ max_scores = 0
 max_above = 0
 speed_object = 4
 
-def show_skins():
 
+def show_skins():
     exit_btn = Button(120, 70, 20, 30)
     tick3_btn = Tick(489, 430, dino_skin_3, dino_when_jump3, dino_colision3, land3, 55, 55)
     tick2_btn = Tick(489, 335, dino_skin2, dino_when_jump2, dino_colision2,land2, 55, 55)
@@ -197,23 +189,19 @@ def show_skins():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-        skins = pygame.image.load('E:\Dinozavr_game\data\picture\skins.png')
+        skins = pygame.image.load('data\picture\skins.png')
         display.blit(skins, (0,0))
         exit_btn.draw(20, 85, 'Exit',show_menu, 50, 103, 10)
 
 
-
-
 def show_menu():
     global menu_music
-
-    prev_fon = pygame.image.load('E:\Dinozavr_game\data\picture\preview.png')
+    prev_fon = pygame.image.load('data\picture\preview.png')
     start_btn = Button(120, 70, 332, 220)
     quit_btn = Button(120, 70, 325, 420)
     skins_btn = Button(120, 70, 318, 320)
-    menu_music = pygame.mixer.music.load('E:\Dinozavr_game\data\sounnd\menu_music.mp3')
+    menu_music = pygame.mixer.music.load('data\sounnd\menu_music.mp3')
     pygame.mixer.music.play(-1)
-
     show = True
     while show:
         for event in pygame.event.get():
@@ -225,24 +213,20 @@ def show_menu():
         start_btn.draw(310, 280, 'Run',start_game, 50, 150, 10)
         quit_btn.draw(310, 480, 'Quit', quit, 50, 150, 10)
         skins_btn.draw(310, 380, 'Skins',show_skins, 50, 150, 10)
-
         pygame.display.update()
-
 
 
 def start_game():
     global scores, make_jump, usr_y, jump_counter
     while game_cycle():
         scores = 0
-
         make_jump = False
         jump_counter = 30
         usr_y = display_height - usr_height - 100
 
 
-
 def find_random_music():
-    global  choise_music
+    global choise_music
     pygame.mixer.Sound.play(start_sound)
     choise_new_music = random.randrange(0, 7)
     while True:
@@ -257,46 +241,26 @@ def find_random_music():
     pygame.mixer.music.play(-1)
 
 
-
-
 def game_cycle():
     global make_jump, game, button
-
     find_random_music()
     cactus_arr = []
     create_cactus_arr(cactus_arr)
-
-
     cloud, palm, frog = open_random_objects()
-
-
     game = True
-
     while game:
         keys = pygame.key.get_pressed()
-
-
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-
-
         if keys[pygame.K_SPACE] or keys[pygame.K_UP]:
             make_jump = True
-
-
         if make_jump:
             jump()
-
-
-
         if keys[pygame.K_ESCAPE]:
             pause()
-
-        
         count_scores(cactus_arr)
-
         display.blit(land, (0, 0))
         print_text('Scores: ' + str(scores), 630,10)
         print_text('Max scores: ' + str(max_scores), 10, 10)
@@ -310,21 +274,18 @@ def game_cycle():
             game = False
             print_text('Game over. Press Enter or Space to play again', 60, 200)
             print_text('Fon music: ' + str(find_music()), 60, 240, (0,196,0))
-
-
-
         #pygame.draw.rect(display, (247,240,22), (usr_x, usr_y, usr_widht,usr_height))
 
         pygame.display.update()
         clock.tick(60)
     return game_over()
 
+
 def jump():
     global usr_y, make_jump, jump_counter
     if jump_counter >= -30:
         usr_y -= jump_counter / 2.5
         jump_counter -= 1
-
     else:
         jump_counter = 30
         make_jump = False
@@ -368,7 +329,6 @@ def find_radius(array):
     return radius
 
 
-
 def draw_array(array):
     for cactus in array:
         check = cactus.move()
@@ -378,17 +338,11 @@ def draw_array(array):
             img = cactus_img[choice]
             widht = cactus_options[choice * 2]
             height = cactus_options[choice * 2 + 1]
-
             cactus.return_self(radius, height,widht, img)
-
-
-
 
 
 def open_random_objects():
     global  cloud, palm, frog
-
-
     choice = random.randrange(0,2)
     img_of_cloud = cloud_img[choice]
 
@@ -396,8 +350,7 @@ def open_random_objects():
     cloud = Object(display_widht, 200, 100, img_of_cloud, 1)
     palm = Object(display_widht, 600 - 150, 700, palma, speed_object)
     frog = Object(display_widht, 600 - 75, 1000,frog_img, speed_object)
-
-    return  cloud, palm, frog
+    return cloud, palm, frog
 
 
 def move_objects(cloud, palm, frog):
@@ -410,7 +363,7 @@ def move_objects(cloud, palm, frog):
 
     check = palm.move()
     if not check:
-        choice =  random.randrange(0, 2)
+        choice = random.randrange(0, 2)
         cor_palm = [random.randrange(135, 155), random.randrange(220,235)]
         palm.return_self(display_widht, 600 - cor_palm[choice], cloud.width, palma)
 
@@ -420,8 +373,7 @@ def move_objects(cloud, palm, frog):
 
 
 def draw_dino():
-    global  img_counter
-
+    global img_counter
     if img_counter == 25:
         img_counter = 0
     if jump_counter < 26:
@@ -431,8 +383,7 @@ def draw_dino():
         img_counter += 1
 
 
-
-def print_text(message, x, y, font_color = (0,0,0), font_type = 'E:\Dinozavr_game\data\picture\i006.ttf', font_size = 30):
+def print_text(message, x, y, font_color=(0, 0, 0), font_type='data\picture\i006.ttf', font_size=30):
     font_type = pygame.font.Font(font_type, font_size)
     text = font_type.render(message, True, font_color)
     display.blit(text, (x,y))
@@ -448,28 +399,22 @@ def pause():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-        print_text('Paused. Press enter to contine', 170, 200)
+        print_text('Paused. Press enter to continue', 170, 200)
         print_text('Fon music: ' + str(find_music()), 170, 240, (0,196,0))
         button1.draw(20, 130, 'Menu', show_menu, 40, 115, 10)
         keys = pygame.key.get_pressed()
         if keys[pygame.K_RETURN] or keys[pygame.K_SPACE] or keys[pygame.K_UP]:
             paused = False
-
-
-
         pygame.display.update()
-
-    
     pygame.mixer.music.unpause()
+
 
 def check_collisoon(barriers):
     for barrier in barriers:
-        if barrier.y == 449: #little cactus
+        if barrier.y == 449:  #little cactus
             if not make_jump:
                 if barrier.x < usr_x + usr_widht - 30 <= barrier.x + barrier.width:
                     return True
-
-
             elif jump_counter >= 0:
                 if usr_y + usr_height - 5 >= barrier.y:
                     if barrier.x <= usr_x + usr_widht - 35 <= barrier.x + barrier.width:
@@ -481,8 +426,8 @@ def check_collisoon(barriers):
                         return True
         else:
             if not make_jump:
-                 if barrier.x < usr_x + usr_widht  <= barrier.x + barrier.width:
-                     return True
+                if barrier.x < usr_x + usr_widht  <= barrier.x + barrier.width:
+                    return True
 
             elif jump_counter == 10:
                 if usr_y + usr_height - 5 >= barrier.y:
@@ -499,6 +444,7 @@ def check_collisoon(barriers):
                         return True
 
     return False
+
 
 def count_scores(barriers):
     global scores, max_above
@@ -517,11 +463,8 @@ def count_scores(barriers):
             max_above = 0
 
 
-
-
 def game_over():
     global scores, max_scores
-
     if scores > max_scores:
         max_scores = scores
     button = Button(110, 60, 20, 80)
@@ -536,12 +479,7 @@ def game_over():
         keys = pygame.key.get_pressed()
         if keys[pygame.K_RETURN] or keys[pygame.K_SPACE]:
             return True
-
-
-
-
         pygame.display.update()
-
 
 
 def find_music():
@@ -568,7 +506,6 @@ def find_music():
     if choise_music == 5:
         music_print = 'Zeig dich. Rammstein'
         return music_print
-
 
     if choise_music == 6:
         music_print = 'Stressed out. Twenty one pilots             '
